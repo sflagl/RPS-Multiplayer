@@ -8,98 +8,86 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <style type="text/css">
-    	.p-b-30{
-    		padding-bottom: 30px;
-    	}
-    </style>
+    <title>RPS - Samantha Flagler</title>
   </head>
   <body>
-    <div class="container">
-    	<div class="row">
-    	    <div class="col-md-12">
-    	    	<div class="jumbotron text-center">
-				  <h1 class="display-4">Anytime is Train Time</h1>
-				  <p class="lead">Choo Choo. Chee Chee.</p>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Rock Paper Scissors</h1>
+        </div>
+      </div>
+      <div class="row score">
+        <div class="col-md-6">
+          <p>User</p>
+          <div id="userScore">0</div>
+        </div>
+        <div class="col-md-6">
+          <p>Computer</p>
+          <div id="computerScore">0</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p id="action-message">Click the one of green circles to, make your move!</p>
+        </div>
+      </div>
+      <div class="row choices">
+        <div class="col-md-4 choice text-right" id="r">
+            <i class="fa fa-4x fa-hand-rock-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-4 choice" id="p">
+          <i class="fa fa-4x fa-hand-paper-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-4 choice text-left" id="s">
+          <i class="fa fa-4x fa-hand-scissors-o" aria-hidden="true"></i>
+        </div>
+      </div>
 
-				</div>
-    	    </div>
-    		<div class="col-md-12 p-b-30">
-    			<div class="card">
-				  <div class="card-header">
-				    Current Train Schedule
-				  </div>
-				  <div class="card-body">
-				    <table class="table">
-					  <thead>
-					    <tr>
-					      <th scope="col">Train Name</th>
-					      <th scope="col">Destination</th>
-					      <th scope="col">Frequency (min)</th>
-					      <th scope="col">Next Arrival</th>
-					      <th scope="col">Minutes Away</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					  		
-					  </tbody>
-					</table>
-				  </div>
-				</div>
-    		</div>
-    		<div class="col-md-12">
-    			<div class="card">
-				  <div class="card-header">
-				    Featured
-				  </div>
-				  <div class="card-body">
-				    <form>
-					  <div class="form-group">
-					    <label for="">Train Name</label>
-					    <input type="text" class="form-control" id="trainInput" aria-describedby="" placeholder="">
-					  </div>
-					  <div class="form-group">
-					    <label for="">Destination</label>
-					    <input type="text" class="form-control" id="destinationInput" placeholder="">
-					  </div>
-					  <div class="form-group">
-					    <label for="">First Train Time (HH:mm - military time)</label>
-					    <input type="" class="form-control" id="firstTrainInput" aria-describedby="" placeholder="">
-					  </div>
-					  <div class="form-group">
-					    <label for="">Frequency (min)</label>
-					    <input type="" class="form-control" id="" placeholder="">
-					  </div>
-					  <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-					</form>
-				  </div>
-				</div>
-    		</div>
-    	</div>
+      <div class="row">
+        <div class="result col-md-12">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-md-2 choiceBox">
+          <p>userSelection</p>
+          <div id="userChoiceBox"></div>
+        </div>
+        <div class="col-md-2 choiceBox">
+          <p>computerSelection</p>
+          <div id="computerChoiceBox"></div>
+        </div>
+        <div class="col-md-4">&nbsp;</div>
+      </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="js/fire.js"></script>
+    <script src="https://use.fontawesome.com/7600238cd3.js"></script>
 
-	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyCerKDzsrEw0LFgW_xuCVHtApOazqJEpoc",
-	    authDomain: "fb-hmk.firebaseapp.com",
-	    databaseURL: "https://fb-hmk.firebaseio.com",
-	    projectId: "fb-hmk",
-	    storageBucket: "",
-	    messagingSenderId: "234135907451"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCerKDzsrEw0LFgW_xuCVHtApOazqJEpoc",
+        authDomain: "fb-hmk.firebaseapp.com",
+        databaseURL: "https://fb-hmk.firebaseio.com",
+        projectId: "fb-hmk",
+        storageBucket: "fb-hmk.appspot.com",
+        messagingSenderId: "234135907451"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+
+
   </body>
 </html>
